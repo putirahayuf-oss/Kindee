@@ -97,7 +97,7 @@ const SLIDES = [
     bg: B.midnight,
     titleColor: "white",
     bodyColor: "rgba(255,255,255,0.75)",
-    star: "😊",
+    starStyle: {filter:"drop-shadow(0 8px 32px rgba(255,200,64,0.5))", transform:"scale(1.1)"},
     title: "Kindee",
     subtitle: "Growing little hearts,\none habit at a time. ❤️",
     isHome: true,
@@ -105,32 +105,32 @@ const SLIDES = [
   {
     bg: "#FFF3E8",
     titleColor: B.midnight,
-    bodyColor: "#666",
-    star: "💛",
+    bodyColor: "#555",
+    starStyle: {filter:"drop-shadow(0 8px 24px rgba(255,200,64,0.3))", transform:"rotate(-8deg) scale(1.05)"},
     title: "Little habits,\nbig impact.",
     body: "Every small action today helps your child grow into a responsible and kind person tomorrow.",
   },
   {
     bg: "#E8FBF7",
     titleColor: B.midnight,
-    bodyColor: "#666",
-    star: "🏆",
+    bodyColor: "#555",
+    starStyle: {filter:"drop-shadow(0 8px 24px rgba(78,199,176,0.3))", transform:"rotate(5deg) scale(1.05)"},
     title: "Tasks, rewards,\nand growth.",
     body: "Kids complete tasks, earn rewards, and unlock new adventures with Kindee.",
   },
   {
     bg: "#FFF0F0",
     titleColor: B.midnight,
-    bodyColor: "#666",
-    star: "🤔",
+    bodyColor: "#555",
+    starStyle: {filter:"drop-shadow(0 8px 24px rgba(255,114,112,0.3))", transform:"rotate(-5deg) scale(0.95)"},
     title: "Understand choices\nand consequences.",
     body: "We help kids understand that every choice has a result, so they can make better decisions every day.",
   },
   {
     bg: "#F0EEFF",
     titleColor: B.midnight,
-    bodyColor: "#666",
-    star: "👨‍👩‍👧",
+    bodyColor: "#555",
+    starStyle: {filter:"drop-shadow(0 8px 24px rgba(139,71,255,0.3))", transform:"rotate(8deg) scale(1.1)"},
     title: "Stronger\ntogether.",
     body: "Parents and kids journey together, celebrate progress, and build a better everyday.",
   },
@@ -153,8 +153,8 @@ function Onboarding({onDone}) {
       </div>
 
       {/* Star mascot */}
-      <div style={{fontSize:90,animation:"float 3s ease-in-out infinite",textAlign:"center",filter:"drop-shadow(0 8px 24px rgba(0,0,0,0.15))"}}>
-        {slide.isHome ? "⭐" : slide.star}
+      <div style={{animation:"float 3s ease-in-out infinite",textAlign:"center"}}>
+        <img src="/kindee_star.png" alt="Kindee" style={{width:180,height:180,objectFit:"contain",...slide.starStyle,transition:"all .4s"}}/>
       </div>
 
       {/* Text */}
@@ -907,7 +907,7 @@ export default function Root() {
     <div style={{minHeight:"100vh",background:B.midnight,display:"flex",alignItems:"center",justifyContent:"center"}}>
       <GS/>
       <div style={{textAlign:"center",animation:"fadeIn .5s ease"}}>
-        <div style={{fontSize:72,animation:"float 2s ease-in-out infinite"}}>⭐</div>
+        <img src="/kindee_star.png" alt="Kindee" style={{width:120,height:120,objectFit:"contain",animation:"float 2s ease-in-out infinite",filter:"drop-shadow(0 8px 32px rgba(255,200,64,0.4))"}}/>
         <div className="fredoka" style={{color:B.sunshine,fontSize:36,marginTop:12}}>Kindee</div>
       </div>
     </div>
